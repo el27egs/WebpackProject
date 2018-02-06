@@ -8,7 +8,7 @@ import Routes from './router';
 import '../style/materialize.css';
 import '../style/react-range.css';
 import '../style/style.css';
-console.log('Hi there!!');
+console.log('github.com!!');
 const App = () => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
