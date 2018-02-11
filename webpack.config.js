@@ -12,8 +12,10 @@ module.exports = {
   entry: {
     bundle: './src/index.js',
     vendor: VENDOR_LIBS,
-    app: ['webpack-hot-middleware/client']
+    app: ['react-hot-loader/patch', 'webpack-hot-middleware/client']
   },
+
+  devtool: "source-map",
 
   output: {
     path: path.join(__dirname, 'dist'),

@@ -5,10 +5,11 @@ import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import Routes from './router';
+import { AppContainer } from 'react-hot-loader';
 import '../style/materialize.css';
 import '../style/react-range.css';
 import '../style/style.css';
-console.log('github.com!!');
+
 const App = () => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
@@ -19,4 +20,20 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root'),
+  )
+}
+
+render(App);
+
+if (module.hot) {
+  console.log('client: index.js =>  hot reloading active for React');
+  module.hot.accept(App, () => {
+    render(App)
+  })
+}
