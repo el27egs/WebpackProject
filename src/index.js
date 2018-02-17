@@ -9,7 +9,7 @@ import Routes from './router';
 import '../style/materialize.css';
 import '../style/react-range.css';
 import '../style/style.css';
-
+console.log("Verificando cambio en caliente con webpack-dev-server");
 const App = () => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 

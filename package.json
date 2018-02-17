@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "NODE_ENV=production npm run clean && webpack -p",
+    "build-dev": "webpack --watch --colors",
     "serve": "webpack-dev-server",
     "deploy-gh": "npm run build && git-subtree push --prefix dist origin_deploy gh-pages",
     "deploy-s3": "npm run build && s3-website deploy dist"

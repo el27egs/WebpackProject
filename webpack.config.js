@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js',
-    publicPath: './'
+    // Con esto habia que colocar localhost:8080/index.html y no solo localhost:8080 publicPath: './'
   },
 
   module: {
